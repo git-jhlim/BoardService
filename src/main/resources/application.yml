@@ -8,6 +8,8 @@ spring:
           uri: http://localhost:9000
           predicates:
             - Path=/display/**
+          filters:
+            - RewritePath=/display/(?<segment>.*), /$\{segment}
 
 server:
   port: 8000
