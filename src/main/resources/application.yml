@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: display-service
+          uri: http://localhost:9000
+          predicates:
+            - Path=/display/**
+
+server:
+  port: 8000
